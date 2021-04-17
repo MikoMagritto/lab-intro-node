@@ -17,15 +17,37 @@ class SortedList {
     });
   }
 
-  get(pos) {}
+  get(pos) {
+    if (pos > this.length) {
+      throw new Error("OutOfBounds");
+    }
+    return this.items.indexOf(pos);
 
-  max() {}
+  }
 
-  min() {}
+  max(arr) {
+    if (arr.length === 0) {
+      throw new Error("OutOfBounds");
+    }
+    return Math.max(...arr);
+  }
 
-  sum() {}
+  min(arr) {
+    if (arr.length === 0) {
+      throw new Error("OutOfBounds");
+    }
+    return Math.min(...arr);
+  }
 
-  avg() {}
+  sum(arr) {
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+      sum += arr[i];
+    }
+    return sum
+  }
+
+  avg() { }
 }
 
 module.exports = SortedList;
